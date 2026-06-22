@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ExcursionCard } from "@/components/ExcursionCard";
 import { excursions } from "@/lib/excursions";
@@ -14,8 +15,17 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-slate-900 via-teal-950 to-slate-800 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <section className="relative flex min-h-[28rem] items-center overflow-hidden text-white md:min-h-[32rem]">
+        <Image
+          src="/images/ward-cove-hero.png"
+          alt="Cruise ship docked at Ward Cove, Alaska with forested mountains"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/92 via-slate-900/75 to-slate-900/45" />
+        <div className="relative mx-auto w-full max-w-6xl px-4 py-16 md:py-24">
           <p className="text-sm font-semibold uppercase tracking-wider text-teal-300">
             Ward Cove, Alaska cruise port
           </p>
