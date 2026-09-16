@@ -10,7 +10,7 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/things-to-do-from-ward-cove";
 
@@ -58,11 +58,12 @@ const categories = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Things to Do from Ward Cove"),
+export const metadata: Metadata = pageMetadata({
+  title: "Things to Do from Ward Cove Cruise Port",
   description:
-    "Things to do from Ward Cove cruise port — culture, wildlife, rainforest, fishing, and downtown Ketchikan with realistic transfer times.",
-};
+    "Things to do from Ward Cove cruise port — culture, wildlife, rainforest, fishing, and downtown Ketchikan with realistic shuttle and transfer times.",
+  path,
+});
 
 export default function ThingsToDoPage() {
   return (

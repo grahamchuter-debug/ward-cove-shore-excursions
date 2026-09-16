@@ -1,0 +1,24 @@
+{
+  "name": "ward-cove-shore-excursions",
+  "main": "https-redirect.js",
+  "compatibility_date": "2026-09-15",
+  "observability": {
+    "enabled": true
+  },
+  "send_email": [
+    { "name": "EMAIL" }
+  ],
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": true,
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "wardcoveshoreexcursions.com/*",
+      "zone_name": "wardcoveshoreexcursions.com"
+    }
+  ]
+}

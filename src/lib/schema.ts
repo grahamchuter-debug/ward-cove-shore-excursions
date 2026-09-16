@@ -1,4 +1,4 @@
-import { absoluteUrl } from "./site";
+import { absoluteUrl, SITE_EMAIL } from "./site";
 
 export type BreadcrumbItem = { name: string; href?: string };
 
@@ -36,11 +36,18 @@ export function organizationSchema() {
     "@type": "Organization",
     name: "Ward Cove Shore Excursions",
     url: absoluteUrl("/"),
+    email: SITE_EMAIL,
     description:
       "Shore excursion planning and enquiries for cruise passengers at Ward Cove, Alaska.",
     areaServed: {
       "@type": "Place",
       name: "Ward Cove, Alaska",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer enquiry",
+      email: SITE_EMAIL,
+      url: absoluteUrl("/book"),
     },
   };
 }

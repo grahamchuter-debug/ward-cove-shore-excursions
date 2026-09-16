@@ -10,7 +10,7 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/ward-cove-cruise-port-guide";
 
@@ -37,11 +37,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Ward Cove Cruise Port Guide"),
+export const metadata: Metadata = pageMetadata({
+  title: "Ward Cove Cruise Port Guide",
   description:
     "Complete guide to the Ward Cove Alaska cruise port — terminal logistics, transfer times to Ketchikan, and what cruise passengers can do ashore.",
-};
+  path,
+});
 
 export default function PortGuidePage() {
   return (

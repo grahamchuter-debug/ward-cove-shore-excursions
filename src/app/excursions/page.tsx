@@ -2,21 +2,38 @@ import type { Metadata } from "next";
 import { ExcursionCard } from "@/components/ExcursionCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CruisePassengerCallout } from "@/components/CruisePassengerCallout";
+import { JsonLd } from "@/components/JsonLd";
 import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { excursions } from "@/lib/excursions";
-import { pageTitle } from "@/lib/site";
+import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: pageTitle("Ward Cove Shore Excursions"),
-  description:
-    "Browse shore excursions for cruise passengers at Ward Cove, Alaska — Misty Fjords, totems, wildlife, rainforest walks, fishing, and downtown Ketchikan tours.",
-};
+const path = "/excursions";
+const excursionsTitle = "Shore Excursions from Ward Cove Cruise Port";
+const excursionsDescription =
+  "Browse Ward Cove shore excursions — Misty Fjords, totems, wildlife, rainforest walks, fishing, and downtown Ketchikan tours with shuttle and transfer context.";
+
+export const metadata: Metadata = pageMetadata({
+  title: excursionsTitle,
+  description: excursionsDescription,
+  path,
+});
 
 export default function ExcursionsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
+      <JsonLd
+        data={[
+          webPageSchema({
+            title: excursionsTitle,
+            description: excursionsDescription,
+            path,
+          }),
+          breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Excursions" }]),
+        ]}
+      />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },

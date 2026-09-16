@@ -10,7 +10,7 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/ward-cove-misty-fjords-excursions";
 
@@ -37,11 +37,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Misty Fjords from Ward Cove"),
+export const metadata: Metadata = pageMetadata({
+  title: "Misty Fjords from Ward Cove",
   description:
     "Misty Fjords National Monument excursions from Ward Cove cruise port — seaplane vs boat, duration, weather, and return-to-ship planning.",
-};
+  path,
+});
 
 export default function MistyFjordsGuidePage() {
   return (

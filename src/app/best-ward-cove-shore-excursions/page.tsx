@@ -11,7 +11,7 @@ import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { getExcursion } from "@/lib/excursions";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/best-ward-cove-shore-excursions";
 
@@ -33,11 +33,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Best Ward Cove Shore Excursions"),
+export const metadata: Metadata = pageMetadata({
+  title: "Best Ward Cove Shore Excursions",
   description:
-    "The best shore excursions from Ward Cove cruise port — ranked by port time, return-to-ship confidence, and transfer logistics for Ketchikan area tours.",
-};
+    "Best shore excursions from Ward Cove cruise port, ranked by port time, shuttle needs, and return-to-ship confidence — not downtown Ketchikan berths.",
+  path,
+});
 
 const bestByTime = [
   {

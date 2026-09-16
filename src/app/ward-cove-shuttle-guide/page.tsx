@@ -10,7 +10,7 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/ward-cove-shuttle-guide";
 
@@ -32,11 +32,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Ward Cove Shuttle & Transport Guide"),
+export const metadata: Metadata = pageMetadata({
+  title: "Ward Cove Shuttle Guide | Transfer to Ketchikan",
   description:
-    "Shuttle buses, taxis, and tour transfers from Ward Cove cruise terminal to downtown Ketchikan — timing tips for cruise passengers.",
-};
+    "Shuttle, taxi, and tour transfers from Ward Cove cruise terminal to downtown Ketchikan — timing tips so you get back before all-aboard.",
+  path,
+});
 
 export default function ShuttleGuidePage() {
   return (

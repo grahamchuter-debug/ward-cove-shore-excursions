@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/faq";
 
@@ -53,11 +53,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("FAQ"),
+export const metadata: Metadata = pageMetadata({
+  title: "FAQ",
   description:
     "Frequently asked questions about Ward Cove cruise port, shore excursions, shuttles to Ketchikan, and return-to-ship timing.",
-};
+  path,
+});
 
 export default function FAQPage() {
   return (

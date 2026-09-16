@@ -10,7 +10,7 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/ward-cove-to-ketchikan";
 
@@ -32,11 +32,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Ward Cove to Ketchikan"),
+export const metadata: Metadata = pageMetadata({
+  title: "Ward Cove to Ketchikan",
   description:
     "How to get from Ward Cove cruise terminal to downtown Ketchikan — distance, drive time, shuttles, and Creek Street planning for cruise passengers.",
-};
+  path,
+});
 
 export default function WardCoveToKetchikanPage() {
   return (

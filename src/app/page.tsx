@@ -2,19 +2,34 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ExcursionCard } from "@/components/ExcursionCard";
+import { JsonLd } from "@/components/JsonLd";
 import { excursions } from "@/lib/excursions";
+import { webPageSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Ward Cove Shore Excursions & Port Guide",
-  description:
-    "Plan shore excursions from Ward Cove cruise port near Ketchikan, Alaska. Port guides, shuttle logistics, and enquiry-only booking for cruise passengers.",
-};
+const homeTitle = "Ward Cove Shore Excursions | Cruise Port Near Ketchikan";
+const homeDescription =
+  "Plan shore excursions from Ward Cove cruise port — distinct from downtown Ketchikan. Shuttle, transfer timing, and enquiry-only planning for cruise passengers.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Ward Cove Shore Excursions",
+  absoluteTitle: homeTitle,
+  description: homeDescription,
+  path: "/",
+});
 
 export default function HomePage() {
   const featured = excursions.slice(0, 4);
 
   return (
     <div>
+      <JsonLd
+        data={webPageSchema({
+          title: homeTitle,
+          description: homeDescription,
+          path: "/",
+        })}
+      />
       <section className="relative flex min-h-[28rem] items-center overflow-hidden text-white md:min-h-[32rem]">
         <Image
           src="/images/ward-cove-hero.png"

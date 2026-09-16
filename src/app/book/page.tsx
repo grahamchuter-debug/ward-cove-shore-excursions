@@ -7,15 +7,16 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/book";
 
-export const metadata: Metadata = {
-  title: pageTitle("Enquire"),
+export const metadata: Metadata = pageMetadata({
+  title: "Enquire about Ward Cove excursions",
   description:
-    "Enquire about Ward Cove shore excursions — tell us your cruise ship, port hours, and interests. Enquiry-only, no online checkout.",
-};
+    "Enquire about Ward Cove shore excursions — tell us your cruise ship, port hours, and interests. Enquiry-only, no online checkout or instant booking.",
+  path,
+});
 
 export default function BookPage() {
   return (
@@ -23,7 +24,7 @@ export default function BookPage() {
       <JsonLd
         data={[
           webPageSchema({
-            title: "Enquire",
+            title: "Enquire about Ward Cove excursions",
             description: metadata.description as string,
             path,
           }),
@@ -34,8 +35,8 @@ export default function BookPage() {
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Enquire" }]} />
         <PageHero
           eyebrow="Enquiry only"
-          title="Book or enquire"
-          subtitle="No prices displayed — share your Ward Cove port details and we will recommend excursions that fit your schedule."
+          title="Enquire about Ward Cove excursions"
+          subtitle="No prices displayed — share your Ward Cove port details and we will recommend excursions that fit your schedule. This is not a booking confirmation."
         />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-2">

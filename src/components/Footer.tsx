@@ -46,6 +46,16 @@ export function Footer() {
       </div>
       <div className="border-t border-slate-800">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:justify-between">
+          <p>
+            Planning questions:{" "}
+            <a
+              href="mailto:hello@wardcoveshoreexcursions.com"
+              className="text-teal-300 hover:text-teal-200"
+            >
+              hello@wardcoveshoreexcursions.com
+            </a>
+            . We reply when we can — not a 24/7 desk.
+          </p>
           <p>© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
           <p>
             Ward Cove cruise terminal · Revillagigedo Island · Southeast Alaska

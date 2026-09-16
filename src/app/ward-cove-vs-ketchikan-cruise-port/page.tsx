@@ -10,7 +10,7 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/ward-cove-vs-ketchikan-cruise-port";
 
@@ -32,11 +32,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: pageTitle("Ward Cove vs Ketchikan Cruise Port"),
+export const metadata: Metadata = pageMetadata({
+  title: "Ward Cove vs Ketchikan Cruise Port",
   description:
     "Ward Cove vs downtown Ketchikan cruise berths — distances, transfer times, and which shore excursions work best from each port.",
-};
+  path,
+});
 
 export default function VsKetchikanPage() {
   return (

@@ -7,15 +7,16 @@ import { NeedHelpCTA } from "@/components/NeedHelpCTA";
 import { PageHero } from "@/components/PageHero";
 import { ReturnToShipBlock } from "@/components/ReturnToShipBlock";
 import { breadcrumbSchema, webPageSchema } from "@/lib/schema";
-import { pageTitle } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
 const path = "/cruise-planner";
 
-export const metadata: Metadata = {
-  title: pageTitle("Cruise Planner"),
+export const metadata: Metadata = pageMetadata({
+  title: "Cruise Planner",
   description:
     "Match Ward Cove shore excursions to your hours in port — interactive planner for cruise passengers at Ward Cove, Alaska.",
-};
+  path,
+});
 
 export default function CruisePlannerPage() {
   return (
